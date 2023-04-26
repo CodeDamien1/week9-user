@@ -76,6 +76,11 @@ const deleteUser = async (req, res) => {
 
 const login = async (req, res) => {
     try {
+        if (req.authUser) {
+            res.status(201).json({
+                
+            })
+        }
         const token = await jwt.sign({id: req.user.id }, process.env.SECRET);
 
         res.status(200).json({
