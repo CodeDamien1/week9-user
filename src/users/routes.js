@@ -9,11 +9,13 @@ userRouter.post("/users/register", hashPass, registerUser)
 
 userRouter.post("/users/login", comparePass, login)
 
-userRouter.get("/users/getUsers", tokenCheck, getAllUsers) // protected endpoint
+userRouter.get("/users/getusers", tokenCheck, getAllUsers) // protected endpoint
 
-userRouter.put("/users/updateUser", updateUser)
+userRouter.get("/users/authcheck", tokenCheck, login)
 
-userRouter.delete("/users/deleteUser", deleteUser)
+userRouter.put("/users/updateuser", updateUser)
+
+userRouter.delete("/users/deleteuser", deleteUser)
 
 
 //TODO: add rest of routes for each controller
