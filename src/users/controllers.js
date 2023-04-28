@@ -84,6 +84,7 @@ const login = async (req, res) => {
                 email: req.authUser.email
               }
             })
+            return
         }
         const token = await jwt.sign({id: req.user.id }, process.env.SECRET);
 

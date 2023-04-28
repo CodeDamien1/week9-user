@@ -1,4 +1,4 @@
-const User = require("../users/model") 
+const User = require("../users/model")
 const jwt = require("jsonwebtoken")
 
 const bcrypt = require("bcrypt")
@@ -20,7 +20,7 @@ const comparePass = async (req, res, next) => {
         // Find user in our database using the username passed in req.body
         // req.user = await User ....
         // use .compare() method to compare if the plain text password matches the hashed version stored in the database 
-        // Error handeling if password don't match OR username doesn't exist in the database 
+        // Error handling if password don't match OR username doesn't exist in the database 
         // if they do match, continue to the controller
         req.user = await User.findOne({where: {username: req.body.username}})      
         console.log(req.user)
